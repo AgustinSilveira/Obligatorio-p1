@@ -1,11 +1,11 @@
 class Usuario {
     static idUsuario = 10;
-    constructor(NombreDeUsuario, password, nombreDelPerro, TamañoPerro, rol, nombrePaseador, cupos) {
+    constructor(nombreDeUsuario, password, nombreDelPerro, tamañoPerro, rol, nombrePaseador, cupos) {
         this.Id = Usuario.idUsuario++;
-        this.NombreDeUsuario = NombreDeUsuario;
+        this.NombreDeUsuario = nombreDeUsuario;
         this.Password = password;
         this.NombreDelPerro = nombreDelPerro;
-        this.TamañoPerro = TamañoPerro;
+        this.TamañoPerro = tamañoPerro;
         this.Rol = rol;
         this.NombrePaseador = nombrePaseador;
         this.Cupos = cupos;
@@ -17,19 +17,68 @@ class Sistema {
         this.LogeadoId = null;
         this.LogeadoRol = null;
         this.HayLogeado = false;
-        this.Usuarios = new Array();
-        this.PrecargarDatos();
+        this.Usuarios = new Array(); //lista clientes
+        this.PrecargarDatos(); //lista paseadores
     }
 
 AltaUsuario(_usuario) {
-    this.Usuarios.push(_usuario)
-    return _usuario
+    this.Usuarios.push(_usuario);
+    return _usuario;
+}
+
+ListaDeClientes(){// devuelve la lista de usuarios, es un metodo. para no ir directamente a la lista 
+        return this.Usuarios;
 }
 
 
-ValidarDatosLogin(usuario,pass) {
+ValidarDatosLogin(usu,pass) {
+    for (let usuario of this.Usuarios) {
+        if(usuario.NombreDeUsuario == usu && usuario.Password == pass){
+            return true;
+        }
+     // validar campos de texto vacios   
+    }   return false
+}
+
+
+ValidarDatosRegister(usu,pass,nomPerro,tipo) {
     
+    if (usu === "" || pass === "" || nomPerro === "" || tipo === "-1"){
+        return "faltan datos"
+    }return true
 }
+
+MostrarPaseadoresCompatibles(tipoPerro) {
+    for (let clientes of this.Usuarios) {
+        switch(tipoPerro){
+        case 'chico':
+        return ['chico', 'mediano']; // Paseadores sin perros grandes
+      case 'mediano':
+        return ['chico', 'mediano', 'grande']; // Paseadores con cualquier perro
+      case 'grande':
+        return ['mediano', 'grande']; // Paseadores sin perros chicos
+      default:
+    }
+}
+
+}
+
+
+MostrarListaPendiente(cliente) {}
+
+MostrarListaCompleta(cliente){}
+
+MostrarContrataciones(paseadores){}
+
+MostrarContratosAceptados(paseadores){}
+
+
+
+
+
+
+
+
 
 PrecargarDatos () {
    let u1 = this.AltaUsuario(new Usuario("1", "Juan6", "Juan12345","","", "paseador", "Juan", "9"))
@@ -41,9 +90,6 @@ PrecargarDatos () {
 }
 
 }
-
-
-
 
 
 
