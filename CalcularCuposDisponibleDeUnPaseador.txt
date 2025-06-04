@@ -11,7 +11,7 @@ CalcularCuposDisponibleDeUnPaseador(paseador){
 }
 
 ObtenerPaseadoresCompatibles(tamanio){
-	
+	let tamaño = this.Logueado.TamañoPerro;
 	let paseadoresCompatibles = new Array();
 	
 	for(let paseador of this.Paseadores){
