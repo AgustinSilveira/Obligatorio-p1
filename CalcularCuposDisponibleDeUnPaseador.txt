@@ -1,0 +1,59 @@
+CalcularCuposDisponibleDeUnPaseador(paseador){
+	let cupos = 0;
+	
+	for(let cont of this.Contrataciones){
+			if(cont.Paseador == paseador){
+				cupos+= cont.Cliente.TamanioPerro;
+			}
+	}
+	return Paseador.Cupos - cupos;
+		
+}
+
+ObtenerPaseadoresCompatibles(tamanio){
+	
+	let paseadoresCompatibles = new Array();
+	
+	for(let paseador of this.Paseadores){
+		let cuposDisponiblesDeEstePaseador = CalcularCuposDisponibleDeUnPaseador(paseador);
+		
+		
+		
+		if(tamanio == 4){
+			if(cuposDisponiblesDeEstePaseador>=tamanio&&!ContienePerroChico()){
+				paseadoresCompatibles.push(paseador)
+			}
+		}
+		
+		if(tamanio == 1){
+			if(cuposDisponiblesDeEstePaseador>=tamanio&&!ContienePerroGrande()){
+				paseadoresCompatibles.push(paseador)
+			}
+		}
+		
+		
+		
+	}
+	return paseadoresCompatibles;
+}
+
+
+ContienePerroGrande(paseador){
+	
+	for(let cont of this.Contrataciones){
+		if(cont.Paseador == paseador){
+		 if(cont.Cliente.TamanioPerro == 4){
+			return true; 
+	      }
+		}
+		
+	}
+	return false;
+	
+}
+
+ContienePerroChico(paseador){
+	
+	
+	
+}
