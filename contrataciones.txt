@@ -1,0 +1,10 @@
+this.AltaSolicitud(new Contratacion("elena", "juan"));
+this.AltaSolicitud(new Contratacion("jorge", "lucas"));
+this.AltaSolicitud(new Contratacion("carla", "julieta"));
+this.AltaSolicitud(new Contratacion("ernesto", "gabriel"));
+this.AltaSolicitud(new Contratacion("valeria", "martin"));
+this.AltaSolicitud(new Contratacion("diego", "lucia"));
+this.AltaSolicitud(new Contratacion("marta", "juan"));
+this.AltaSolicitud(new Contratacion("nicolas", "julieta"));
+this.AltaSolicitud(new Contratacion("laura", "lucas"));
+this.AltaSolicitud(new Contratacion("andres", "gabriel"));
