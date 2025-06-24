@@ -11,7 +11,7 @@ class Usuario {
         this.Cupos = cupos;
     }
 }
-
+// https://prod.liveshare.vsengsaas.visualstudio.com/join?61B693D9463CFB1072B8061C38AA41486C5A
 class Sistema {
     constructor() {
         this.LogeadoId = null;
