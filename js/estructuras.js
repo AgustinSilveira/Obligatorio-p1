@@ -1,4 +1,4 @@
-class Usuario {
+class Usuario {    https://prod.liveshare.vsengsaas.visualstudio.com/join?9F640763544B086ED3CB35005943372BB0AD
     static idUsuario = 10;
     constructor(nombreDeUsuario, password, nombreDelPerro, tamañoPerro, rol, nombrePaseador, cupos) {
         this.Id = Usuario.idUsuario++;
